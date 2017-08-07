@@ -2,12 +2,11 @@
 #include "Map.h"
 
 Model::Model(){
-
 	
 }
 
 Model::~Model(){
-	delete mp_map;
+//	delete mp_map;
 }
 int Model::setView(View *pView){
     this->mp_view=pView;

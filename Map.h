@@ -1,4 +1,5 @@
 #include "common.h"
+
 struct Mapinfo
 {
 	char isBlock; // 0 - empty, 1 - wall, 2 - block
@@ -9,11 +10,13 @@ struct Mapinfo
 class Map
 {
  private:
-    int m_col, m_row;
+    int m_total_col, m_total_row;
+	int m_play_col, m_side_col;
     Mapinfo **mp_play_map;
 	Mapinfo **mp_side_map;
  public:
  	Map(int a_col, int a_row);
+	~Map();
 	Mapinfo **getPlayMap() { return 0; }
 	Mapinfo **getSideMap() { return 0; }
 
@@ -22,5 +25,4 @@ class Map
 	//fail -> -1, succeed -> number of lines
 	int checkLines();
 	void deleteLine();
-	~Map();
 };
